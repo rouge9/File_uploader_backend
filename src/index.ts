@@ -3,7 +3,6 @@ import connection from "./db/config";
 import cors from "cors";
 import fileRoute from "./route/fileRoute";
 import { json, urlencoded } from "body-parser";
-import multer from "multer";
 
 const app = express();
 const corsOptions = {
@@ -33,25 +32,6 @@ connection
   .catch((err) => {
     console.log(err);
   });
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./uploads/");
-  },
-
-  filename: function (req: any, file: any, cb: any) {
-    cb(null, file.originalname);
-  },
-});
-
-const fileFilter = (req: any, file: any, cb: any) => {
-  if (file) {
-    cb(null, true);
-  } else {
-    cb(new Error("File Does not exiest"), false);
-  }
-};
-const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 const PORT = process.env.PORT || 5000;
 
