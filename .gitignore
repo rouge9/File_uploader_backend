@@ -1,0 +1,8 @@
+.env
+.env.*
+.DS_Store 
+# Dependency directories
+node_modules/
+
+# typescript build
+dist/
