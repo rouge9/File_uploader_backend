@@ -9,8 +9,8 @@ import {
 
 const router = Router();
 
-router.get("/allFiles", getFiles);
-router.post("/saveFile", upload, saveFile);
-router.delete("/removeFile/:id", deleteFile);
+router.get("/getFiles", getFiles);
+router.post("/uploadFile", upload, saveFile);
+router.delete("/deleteFile/:id", deleteFile);
 
 export default router;

@@ -2,10 +2,10 @@ import { Sequelize } from "sequelize-typescript";
 import { Files } from "../model/filesModel";
 
 const connection = new Sequelize({
-  database: "files",
+  database: "file",
   dialect: "mysql",
   username: "root",
-  password: "",
+  password: "12345678",
   host: "localhost",
   logging: false,
   models: [Files],
